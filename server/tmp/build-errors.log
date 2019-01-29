@@ -99,4 +99,226 @@ src/database/main.go:17:8: undefined: db
 , cmd err: exit status 2stderr: # command-line-arguments
 ./main.go:12:2: cats declared and not used
 ./main.go:13:2: results declared and not used
+, cmd err: exit status 2stderr: # command-line-arguments
+./main.go:14:21: undefined: controllers
+, cmd err: exit status 2stderr: main.go:6:2: unknown import path "catmash/src/controllers": cannot find module providing package catmash/src/controllers
+, cmd err: exit status 1stderr: # command-line-arguments
+./main.go:15:40: not enough arguments in call to controllers.AllCats
+	have ()
+	want (*gin.Context)
+./main.go:15:40: controllers.AllCats() used as value
+, cmd err: exit status 2stderr: # command-line-arguments
+./main.go:17:2: results declared and not used
+, cmd err: exit status 2stderr: # command-line-arguments
+./main.go:17:2: results declared and not used
+, cmd err: exit status 2stderr: # catmash/src/models
+src/models/cats.go:25:11: undefined: image
+, cmd err: exit status 2stderr: # catmash/src/models
+src/models/cats.go:38:16: undefined: catsImageFile
+, cmd err: exit status 2stderr: # catmash/src/models
+src/models/cats.go:40:29: undefined: imageList
+src/models/cats.go:41:14: undefined: imageList
+, cmd err: exit status 2stderr: # catmash/src/models
+src/models/cats.go:41:14: undefined: imageList
+, cmd err: exit status 2stderr: # catmash/src/models
+src/models/cats.go:42:10: database.Db evaluated but not used
+, cmd err: exit status 2stderr: # catmash/src/models
+src/models/cats.go:42:10: database.Db evaluated but not used
+, cmd err: exit status 2stderr: # catmash/src/models
+src/models/cats.go:42:13: database.Db.Create evaluated but not used
+, cmd err: exit status 2stderr: # catmash/src/models
+src/models/cats.go:45:14: syntax error: unexpected newline, expecting comma or }
+, cmd err: exit status 2stderr: import cycle not allowed
+package main
+	imports catmash/src/controllers
+	imports catmash/src/models
+	imports catmash/src/database
+	imports catmash/src/models
+, cmd err: exit status 1stderr: import cycle not allowed
+package main
+	imports catmash/src/controllers
+	imports catmash/src/models
+	imports catmash/src/database
+	imports catmash/src/models
+, cmd err: exit status 1stderr: import cycle not allowed
+package main
+	imports catmash/src/controllers
+	imports catmash/src/models
+	imports catmash/src/database
+	imports catmash/src/models
+, cmd err: exit status 1stderr: import cycle not allowed
+package main
+	imports catmash/src/controllers
+	imports catmash/src/models
+	imports catmash/src/database
+	imports catmash/src/models
+, cmd err: exit status 1stderr: import cycle not allowed
+package main
+	imports catmash/src/controllers
+	imports catmash/src/models
+	imports catmash/src/database
+	imports catmash/src/models
+, cmd err: exit status 1stderr: import cycle not allowed
+package main
+	imports catmash/src/controllers
+	imports catmash/src/models
+	imports catmash/src/database
+	imports catmash/src/models
+, cmd err: exit status 1stderr: import cycle not allowed
+package main
+	imports catmash/src/controllers
+	imports catmash/src/models
+	imports catmash/src/database
+	imports catmash/src/models
+, cmd err: exit status 1stderr: import cycle not allowed
+package main
+	imports catmash/src/controllers
+	imports catmash/src/models
+	imports catmash/src/database
+	imports catmash/src/models
+, cmd err: exit status 1stderr: # catmash/src/controllers
+src/controllers/cats.go:12:20: not enough arguments in call to models.InstallCats
+	have ()
+	want (*gin.Context)
+, cmd err: exit status 2stderr: # catmash/src/controllers
+src/controllers/cats.go:12:20: not enough arguments in call to models.InstallCats
+	have ()
+	want (*gin.Context)
+, cmd err: exit status 2stderr: # catmash/src/controllers
+src/controllers/cats.go:12:20: not enough arguments in call to models.InstallCats
+	have ()
+	want (*gin.Context)
+, cmd err: exit status 2stderr: # catmash/src/controllers
+src/controllers/cats.go:12:20: not enough arguments in call to models.InstallCats
+	have ()
+	want (*gin.Context)
+, cmd err: exit status 2stderr: # catmash/src/controllers
+src/controllers/cats.go:12:20: not enough arguments in call to models.InstallCats
+	have ()
+	want (*gin.Context)
+, cmd err: exit status 2stderr: build catmash: cannot find module for path http
+, cmd err: exit status 1stderr: build catmash: cannot find module for path http
+, cmd err: exit status 1stderr: build catmash: cannot find module for path http
+, cmd err: exit status 1stderr: # catmash/src/controllers
+src/controllers/cats.go:17:10: undefined: models.GetCat
+src/controllers/cats.go:18:10: undefined: models.GetCat
+src/controllers/cats.go:19:9: undefined: http.StatusOk
+src/controllers/cats.go:19:25: type string is not an expression
+, cmd err: exit status 2stderr: # catmash/src/controllers
+src/controllers/cats.go:16:10: undefined: models.GetCat
+src/controllers/cats.go:17:10: undefined: models.GetCat
+src/controllers/cats.go:18:15: type string is not an expression
+, cmd err: exit status 2stderr: # catmash/src/controllers
+src/controllers/cats.go:18:26: syntax error: unexpected interface, expecting comma or )
+, cmd err: exit status 2stderr: # catmash/src/controllers
+src/controllers/cats.go:18:25: syntax error: unexpected {, expecting comma or )
+src/controllers/cats.go:21:3: syntax error: unexpected ) after top level declaration
+, cmd err: exit status 2stderr: # catmash/src/controllers
+src/controllers/cats.go:16:10: undefined: models.GetCat
+src/controllers/cats.go:17:10: undefined: models.GetCat
+src/controllers/cats.go:18:15: type string is not an expression
+, cmd err: exit status 2stderr: # catmash/src/controllers
+src/controllers/cats.go:16:10: undefined: models.GetCat
+src/controllers/cats.go:17:10: undefined: models.GetCat
+src/controllers/cats.go:18:15: type string is not an expression
+, cmd err: exit status 2stderr: # catmash/src/models
+src/models/cats.go:52:17: not enough arguments in call to database.Db.Get
+	have ()
+	want (string)
+, cmd err: exit status 2stderr: # catmash/src/models
+src/models/cats.go:52:17: not enough arguments in call to database.Db.Get
+	have ()
+	want (string)
+, cmd err: exit status 2stderr: # catmash/src/models
+src/models/cats.go:52:17: not enough arguments in call to database.Db.Get
+	have ()
+	want (string)
+, cmd err: exit status 2stderr: # catmash/src/models
+src/models/cats.go:52:20: type Cats is not an expression
+, cmd err: exit status 2stderr: # catmash/src/models
+src/models/cats.go:52:26: undefined: Model
+src/models/cats.go:52:31: too few values in &Cats literal
+, cmd err: exit status 2stderr: # catmash/src/models
+src/models/cats.go:52:26: undefined: Model
+src/models/cats.go:52:31: too few values in &Cats literal
+, cmd err: exit status 2stderr: # catmash/src/models
+src/models/cats.go:52:26: undefined: Model
+src/models/cats.go:52:31: too few values in &Cats literal
+, cmd err: exit status 2stderr: # catmash/src/models
+src/models/cats.go:52:26: undefined: Model
+src/models/cats.go:52:31: too few values in &Cats literal
+, cmd err: exit status 2stderr: # catmash/src/models
+src/models/cats.go:52:36: syntax error: unexpected }, expecting expression
+, cmd err: exit status 2stderr: # catmash/src/models
+src/models/cats.go:52:26: undefined: Model
+src/models/cats.go:52:31: too few values in &Cats literal
+, cmd err: exit status 2stderr: # catmash/src/models
+src/models/cats.go:52:26: undefined: Model
+src/models/cats.go:52:31: too few values in &Cats literal
+, cmd err: exit status 2stderr: # catmash/src/models
+src/models/cats.go:52:36: too few values in &Cats literal
+src/models/cats.go:52:37: cannot use id (type int) as type uint in field value
+, cmd err: exit status 2stderr: # catmash/src/models
+src/models/cats.go:53:36: too few values in &Cats literal
+src/models/cats.go:53:37: cannot use id (type int) as type uint in field value
+, cmd err: exit status 2stderr: # catmash/src/models
+src/models/cats.go:53:28: cannot convert "id = " (type untyped string) to type int
+src/models/cats.go:53:28: invalid operation: "id = " + id (mismatched types string and int)
+, cmd err: exit status 2stderr: # catmash/src/models
+src/models/cats.go:53:28: cannot convert "id = " (type untyped string) to type int
+src/models/cats.go:53:28: invalid operation: "id = " + id (mismatched types string and int)
+, cmd err: exit status 2stderr: # catmash/src/models
+src/models/cats.go:53:28: cannot convert "id = " (type untyped string) to type int
+src/models/cats.go:53:28: invalid operation: "id = " + id (mismatched types string and int)
+src/models/cats.go:53:33: database.Db.Where("id = " + id).F undefined (type *gorm.DB has no field or method F)
+, cmd err: exit status 2stderr: # catmash/src/models
+src/models/cats.go:53:47: database.Db.Where(fmt.Sprintf("id = %d", id)).F undefined (type *gorm.DB has no field or method F)
+, cmd err: exit status 2stderr: # catmash/src/models
+src/models/cats.go:53:55: undefined: cat
+, cmd err: exit status 2stderr: # catmash/src/controllers
+src/controllers/cats.go:16:10: undefined: models.GetCat
+src/controllers/cats.go:17:10: undefined: models.GetCat
+src/controllers/cats.go:18:15: type string is not an expression
+, cmd err: exit status 2stderr: # catmash/src/models
+src/models/cats.go:54:2: too many arguments to return
+	have (Cats)
+	want ()
+, cmd err: exit status 2stderr: # catmash/src/models
+src/models/cats.go:51:22: undefined: model
+, cmd err: exit status 2stderr: # catmash/src/models
+src/models/cats.go:51:22: undefined: model
+, cmd err: exit status 2stderr: # catmash/src/controllers
+src/controllers/cats.go:16:10: undefined: models.GetCat
+src/controllers/cats.go:17:10: undefined: models.GetCat
+src/controllers/cats.go:18:15: type string is not an expression
+, cmd err: exit status 2stderr: # catmash/src/models
+src/models/cats.go:52:6: cat redeclared in this block
+	previous declaration at src/models/cats.go:51:27
+, cmd err: exit status 2stderr: # catmash/src/controllers
+src/controllers/cats.go:16:10: undefined: models.GetCat
+src/controllers/cats.go:17:10: undefined: models.GetCat
+src/controllers/cats.go:18:15: type string is not an expression
+, cmd err: exit status 2stderr: # catmash/src/controllers
+src/controllers/cats.go:16:23: not enough arguments in call to models.GetCat
+	have ()
+	want (int)
+src/controllers/cats.go:17:23: not enough arguments in call to models.GetCat
+	have ()
+	want (int)
+src/controllers/cats.go:18:15: type string is not an expression
+, cmd err: exit status 2stderr: # catmash/src/controllers
+src/controllers/cats.go:18:23: not enough arguments in call to models.GetCat
+	have ()
+	want (int)
+src/controllers/cats.go:19:15: type string is not an expression
+, cmd err: exit status 2stderr: # catmash/src/controllers
+src/controllers/cats.go:19:15: type string is not an expression
+, cmd err: exit status 2stderr: # catmash/src/controllers
+src/controllers/cats.go:19:15: type string is not an expression
+, cmd err: exit status 2stderr: # catmash/src/controllers
+src/controllers/cats.go:19:15: type string is not an expression
+, cmd err: exit status 2stderr: # catmash/src/controllers
+src/controllers/cats.go:22:15: syntax error: unexpected newline, expecting comma or }
+, cmd err: exit status 2stderr: # catmash/src/controllers
+src/controllers/cats.go:19:15: type string is not an expression
 , cmd err: exit status 2

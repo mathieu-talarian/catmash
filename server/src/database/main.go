@@ -14,5 +14,4 @@ func init() {
 	if Db, err = gorm.Open("postgres", "postgres://mathieumoullec:root@localhost/catmash?sslmode=disable"); err != nil {
 		panic(err)
 	}
-	defer Db.Close()
 }
