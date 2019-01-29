@@ -1,0 +1,102 @@
+stderr: # command-line-arguments
+./main.go:7:2: v1 declared and not used
+, cmd err: exit status 2stderr: # command-line-arguments
+./main.go:7:25: syntax error: unexpected { at end of statement
+./main.go:8:2: syntax error: non-declaration statement outside function body
+, cmd err: exit status 2stderr: # command-line-arguments
+./main.go:7:25: syntax error: unexpected { at end of statement
+./main.go:10:2: syntax error: non-declaration statement outside function body
+, cmd err: exit status 2stderr: # command-line-arguments
+./main.go:7:25: syntax error: unexpected { at end of statement
+./main.go:10:2: syntax error: non-declaration statement outside function body
+, cmd err: exit status 2stderr: # command-line-arguments
+./main.go:7:25: syntax error: unexpected { at end of statement
+./main.go:10:4: syntax error: unexpected ) after top level declaration
+, cmd err: exit status 2stderr: # command-line-arguments
+./main.go:7:25: syntax error: unexpected { at end of statement
+./main.go:10:4: syntax error: unexpected ) after top level declaration
+, cmd err: exit status 2stderr: # command-line-arguments
+./main.go:7:25: syntax error: unexpected { at end of statement
+./main.go:10:4: syntax error: unexpected ) after top level declaration
+, cmd err: exit status 2stderr: # command-line-arguments
+./main.go:7:25: syntax error: unexpected { at end of statement
+./main.go:10:2: syntax error: non-declaration statement outside function body
+, cmd err: exit status 2stderr: # command-line-arguments
+./main.go:9:25: syntax error: unexpected { at end of statement
+./main.go:12:2: syntax error: non-declaration statement outside function body
+, cmd err: exit status 2stderr: # command-line-arguments
+./main.go:9:25: syntax error: unexpected { at end of statement
+./main.go:12:2: syntax error: non-declaration statement outside function body
+, cmd err: exit status 2stderr: # command-line-arguments
+./main.go:9:19: undefined: Cats
+, cmd err: exit status 2stderr: # command-line-arguments
+./main.go:10:8: not enough arguments in call to c.JSON
+	have (number)
+	want (int, interface {})
+, cmd err: exit status 2stderr: # command-line-arguments
+./main.go:14:4: no new variables on left side of :=
+./main.go:14:7: undefined: database
+, cmd err: exit status 2stderr: # command-line-arguments
+./main.go:14:4: no new variables on left side of :=
+./main.go:14:7: undefined: database
+, cmd err: exit status 2stderr: # command-line-arguments
+./main.go:14:4: no new variables on left side of :=
+./main.go:14:7: undefined: database
+, cmd err: exit status 2stderr: # command-line-arguments
+./main.go:14:4: no new variables on left side of :=
+./main.go:14:7: undefined: database
+, cmd err: exit status 2stderr: # command-line-arguments
+./main.go:14:4: no new variables on left side of :=
+./main.go:14:7: undefined: database
+, cmd err: exit status 2stderr: # command-line-arguments
+./main.go:14:4: no new variables on left side of :=
+./main.go:14:7: undefined: database
+, cmd err: exit status 2stderr: # command-line-arguments
+./main.go:14:4: no new variables on left side of :=
+./main.go:14:7: undefined: database
+, cmd err: exit status 2stderr: # command-line-arguments
+./main.go:14:4: no new variables on left side of :=
+./main.go:14:7: undefined: database
+, cmd err: exit status 2stderr: # command-line-arguments
+./main.go:14:4: no new variables on left side of :=
+./main.go:14:7: undefined: database
+, cmd err: exit status 2stderr: # command-line-arguments
+./main.go:14:4: no new variables on left side of :=
+./main.go:14:7: undefined: database
+, cmd err: exit status 2stderr: # command-line-arguments
+./main.go:16:4: no new variables on left side of :=
+./main.go:16:7: undefined: database
+, cmd err: exit status 2stderr: # command-line-arguments
+./main.go:16:6: undefined: database
+, cmd err: exit status 2stderr: # catmash/src/database
+src/database/main.go:14:5: undefined: db
+src/database/main.go:17:8: undefined: db
+, cmd err: exit status 2stderr: # command-line-arguments
+./main.go:17:10: database.Db evaluated but not used
+, cmd err: exit status 2stderr: # command-line-arguments
+./main.go:22:22: not enough arguments in call to database.Db.HasTable
+	have ()
+	want (interface {})
+, cmd err: exit status 2stderr: # command-line-arguments
+./main.go:23:22: not enough arguments in call to database.Db.HasTable
+	have ()
+	want (interface {})
+, cmd err: exit status 2stderr: # command-line-arguments
+./main.go:23:22: not enough arguments in call to database.Db.HasTable
+	have ()
+	want (interface {})
+, cmd err: exit status 2stderr: # command-line-arguments
+./main.go:19:2: cats declared and not used
+, cmd err: exit status 2stderr: # command-line-arguments
+./main.go:18:2: v1 declared and not used
+, cmd err: exit status 2stderr: # command-line-arguments
+./main.go:18:2: v1 declared and not used
+, cmd err: exit status 2stderr: # command-line-arguments
+./main.go:18:2: v1 declared and not used
+, cmd err: exit status 2stderr: # command-line-arguments
+./main.go:19:2: cats declared and not used
+./main.go:20:2: results declared and not used
+, cmd err: exit status 2stderr: # command-line-arguments
+./main.go:12:2: cats declared and not used
+./main.go:13:2: results declared and not used
+, cmd err: exit status 2
