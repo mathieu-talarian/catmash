@@ -38,15 +38,15 @@ const HomePage = () => {
   return (
     <div>
       HomePage
-      <Row type="flex">
+      <Row type='flex' loading={loading}>
         <Col span={12}>
-          <img onClick={(e) => onSubmit(e, 1)} alt="cat1" src={cats.cat1.image}/>
+          <img onClick={(e) => onSubmit(e, 1)} alt='cat1' src={cats.cat1.image} />
         </Col>
         <Col span={12}>
-          <img onClick={(e) => onSubmit(e, 2)} alt="cat2" src={cats.cat2.image}/>
+          <img onClick={(e) => onSubmit(e, 2)} alt='cat2' src={cats.cat2.image} />
         </Col>
       </Row>
-      <Link to="/results">Resultats</Link>
+      <Link to='/results'>Resultats</Link>
     </div>)
 }
 
