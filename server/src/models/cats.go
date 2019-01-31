@@ -13,8 +13,9 @@ import (
 
 type Cats struct {
 	gorm.Model
-	Image string `gorm:"type:varchar(500)"`
-	UUID  string `gorm:"type:varchar(500)"`
+	Image  string  `gorm:"type:varchar(500)" json:"image"`
+	UUID   string  `gorm:"type:varchar(500)" json:"uuid"`
+	Rating float64 `gorm:"notnull;type:decimal" json:"rating"`
 }
 
 type Image struct {
@@ -26,10 +27,11 @@ type catsImageList struct {
 	Collection []Image `json:"images`
 }
 
-func InstallCats() {
+func InstallCats() error {
 	jsonFile, err := os.Open("images.json")
 	if err != nil {
 		log.Println(err)
+		return err
 	}
 	defer jsonFile.Close()
 	byteValue, err := ioutil.ReadAll(jsonFile)
@@ -37,21 +39,30 @@ func InstallCats() {
 		log.Println(err)
 	}
 	cats := make([]Image, 0)
-	json.Unmarshal(byteValue, &cats)
-	fmt.Println(cats)
+	if err := json.Unmarshal(byteValue, &cats); err != nil {
+		return err
+	}
 	database.Db.AutoMigrate(&Cats{})
 	for _, v := range cats {
 		database.Db.Create(&Cats{
-			Image: v.Url,
-			UUID:  v.Id,
+			Image:  v.Url,
+			UUID:   v.Id,
+			Rating: float64(2000),
 		})
 	}
+	return nil
 }
 
 func GetCat(id int) (cat Cats) {
-	if id == 0 {
-		id++
-	}
 	database.Db.Where(fmt.Sprintf("id = %d", id)).First(&cat)
+	return
+}
+
+func (c *Cats) Update() {
+	database.Db.Save(c)
+}
+
+func All() (cats []Cats) {
+	database.Db.Order("rating desc").Find(&cats)
 	return
 }
