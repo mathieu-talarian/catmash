@@ -3,10 +3,14 @@ import { Route, Switch, Link } from 'react-router-dom'
 import PropTypes from 'prop-types'
 import './App.css'
 
+import { Layout, Button } from 'antd'
+
 import HomePage from './pages/HomePage'
 import ResultPage from './pages/ResultPage'
+import api from './api'
 
-const App = ({ location }) => <>
+const App = ({ location }) => <Layout>
+  <Button onClick={(e) => api.cats.install()}>Cats</Button>
   <Link to='/'>To home</Link>
   <Link to='/result'>To result</Link>
   <Switch>
@@ -24,7 +28,7 @@ const App = ({ location }) => <>
       component={ResultPage}
     />
   </Switch>
-</>
+</Layout>
 
 App.propTypes = {
   location: PropTypes.shape({
