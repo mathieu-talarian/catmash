@@ -20,12 +20,12 @@ const ResultPage = () => {
   const displayCats = () => (
     <tr>
       {cats.map(cat =>
-        <ul>{cat.rating}</ul>
+        <ul>{cat.ID}<br />{cat.rating}</ul>
       )}
     </tr>
   )
 
-  return <div>ResultPage
+  return <div loading={loading}>ResultPage
     {displayCats()}
   </div>
 }

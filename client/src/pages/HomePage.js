@@ -2,34 +2,52 @@ import React, { useState, useEffect } from 'react'
 import PropTypes from 'prop-types'
 import api from '../api'
 import { Link } from 'react-router-dom'
-import { Row, Col } from 'antd'
+import { Form, Radio, Button } from 'antd'
 
 const HomePage = () => {
+  const [disabled, updateDisabled] = useState(true)
   const [loading, updateLoading] = useState(false)
   const [cats, updateCats] = useState({
-    cat1: {},
-    cat2: {}
+    cat1: {
+      id: 0,
+      image: 0
+    },
+    cat2: {
+      id: 0,
+      image: 0
+    }
   })
 
   const onInitialRender = () => {
     updateLoading(true)
     api.cats.get()
       .then(res => {
-        updateCats(res)
+        updateCats({
+          cat1: {
+            id: res.cat1.ID,
+            image: res.cat1.image
+          },
+          cat2: {
+            id: res.cat2.ID,
+            image: res.cat2.image
+          }
+        })
         updateLoading(false)
       })
       .catch(err => console.log(err))
   }
 
   const onSubmit = (e, res) => {
-    const { cat1, cat2 } = this.state.data
+    const { cat1, cat2 } = cats
     e.preventDefault()
-    this.setState({ loading: true })
+    updateLoading(true)
     api.vote.post({
-      cat1: { id: cat1.ID, voted: res === 1 },
-      cat2: { id: cat2.ID, voted: res === 2 }
+      cat1: { id: cat1.id, voted: res === 1 },
+      cat2: { id: cat2.id, voted: res === 2 }
     })
-      .then()
+      .then(
+        () => updateLoading(false)
+      )
       .catch(err => console.log(err))
   }
 
@@ -38,14 +56,13 @@ const HomePage = () => {
   return (
     <div>
       HomePage
-      <Row type='flex' loading={loading}>
-        <Col span={12}>
-          <img onClick={(e) => onSubmit(e, 1)} alt='cat1' src={cats.cat1.image} />
-        </Col>
-        <Col span={12}>
-          <img onClick={(e) => onSubmit(e, 2)} alt='cat2' src={cats.cat2.image} />
-        </Col>
-      </Row>
+      <Form>
+        <Radio.Group span={12}>
+          <Radio.Button value='1'><img onClick={(e) => onSubmit(e, 1)} alt='cat1' src={cats.cat1.image} /></Radio.Button>
+          <Radio.Button value='2'><img onClick={(e) => onSubmit(e, 2)} alt='cat2' src={cats.cat2.image} /></Radio.Button>
+        </Radio.Group>
+        <Button>Soumettre</Button>
+      </Form>
       <Link to='/results'>Resultats</Link>
     </div>)
 }
