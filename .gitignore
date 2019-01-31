@@ -1,0 +1,7 @@
+client/.idea
+client/README.md
+
+server/.idea
+server/tmp
+server/main
+server/gin-bin
