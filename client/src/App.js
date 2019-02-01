@@ -5,14 +5,17 @@ import './App.css'
 
 import { Layout, Button } from 'antd'
 
-import HomePage from './pages/HomePage'
-import ResultPage from './pages/ResultPage'
+import HomePage from './components/pages/HomePage'
+import ResultPage from './components/pages/ResultPage'
+
+import Header from './components/navigation/Header'
+import Footer from './components/navigation/Footer'
+
 import api from './api'
 
 const App = ({ location }) => <Layout>
+  <Header location={location} />
   <Button onClick={(e) => api.cats.install()}>Cats</Button>
-  <Link to='/'>To home</Link>
-  <Link to='/result'>To result</Link>
   <Switch>
 
     <Route
@@ -28,6 +31,7 @@ const App = ({ location }) => <Layout>
       component={ResultPage}
     />
   </Switch>
+  <Footer />
 </Layout>
 
 App.propTypes = {
