@@ -24,7 +24,7 @@ func main() {
 	v1 := r.Group("api/v1")
 	cats(v1)
 	vote(v1)
-	// results := v1.Group("/results")b
+	// results := v1.Group("/results")
 	if err := r.Run(); err != nil {
 		panic(err)
 	}
