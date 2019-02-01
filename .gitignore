@@ -5,3 +5,5 @@ server/.idea
 server/tmp
 server/main
 server/gin-bin
+server/build
+server/catmash
