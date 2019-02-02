@@ -7,8 +7,9 @@ const ResultPage = () => {
 
   const onInitialRender = () => {
     updateLoading(true)
-    api.cats.getAllOrdered()
-      .then((res) => {
+    api.cats
+      .getAllOrdered()
+      .then(res => {
         updateLoading(false)
         updateCats(res)
       })
@@ -19,15 +20,22 @@ const ResultPage = () => {
 
   const displayCats = () => (
     <tr>
-      {cats.map(cat =>
-        <ul>{cat.ID}<br />{cat.rating}</ul>
-      )}
+      {cats.map(cat => (
+        <ul>
+          {cat.ID}
+          <br />
+          {cat.rating}
+        </ul>
+      ))}
     </tr>
   )
 
-  return <div loading={loading}>ResultPage
-    {displayCats()}
-  </div>
+  return (
+    <div loading={loading}>
+      ResultPage
+      {displayCats()}
+    </div>
+  )
 }
 
 export default ResultPage
