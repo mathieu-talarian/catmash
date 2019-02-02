@@ -48,7 +48,7 @@ const HomePage = () => {
         cat2: { id: cat2.id, voted: res === 2 }
       })
       .then(() => updateLoading(false))
-      .catch(err => console.log(err));
+      .catch(err => toast.error(err));
   };
 
   useEffect(onInitialRender, []);
