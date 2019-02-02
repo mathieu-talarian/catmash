@@ -1,25 +1,25 @@
-import React, { useState, useEffect } from 'react'
-import PropTypes from 'prop-types'
-import api from '../../api'
-import { Link } from 'react-router-dom'
-
-import CatsForm from '../forms/CatsForm'
+import React, { useState, useEffect } from "react";
+import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
+import { ToastContainer, toast } from "react-toastify";
+import api from "../../api";
+import CatsForm from "../forms/CatsForm";
 
 const HomePage = () => {
-  const [loading, updateLoading] = useState(true)
+  const [loading, updateLoading] = useState(true);
   const [cats, updateCats] = useState({
     cat1: {
       id: 0,
-      image: ''
+      image: ""
     },
     cat2: {
       id: 0,
-      image: ''
+      image: ""
     }
-  })
+  });
 
   const onInitialRender = () => {
-    updateLoading(true)
+    updateLoading(true);
     api.cats
       .get()
       .then(res => {
@@ -32,29 +32,30 @@ const HomePage = () => {
             id: res.cat2.ID,
             image: res.cat2.image
           }
-        })
-        updateLoading(false)
+        });
+        updateLoading(false);
       })
-      .catch(err => console.log(err))
-  }
+      .catch(err => toast.error(err));
+  };
 
   const submit = (e, res) => {
-    const { cat1, cat2 } = cats
-    e.preventDefault()
-    updateLoading(true)
+    const { cat1, cat2 } = cats;
+    e.preventDefault();
+    updateLoading(true);
     api.vote
       .post({
         cat1: { id: cat1.id, voted: res === 1 },
         cat2: { id: cat2.id, voted: res === 2 }
       })
       .then(() => updateLoading(false))
-      .catch(err => console.log(err))
-  }
+      .catch(err => console.log(err));
+  };
 
-  useEffect(onInitialRender, [])
+  useEffect(onInitialRender, []);
 
   return (
     <div>
+      <ToastContainer />
       <image src={cats.cat1.image} />
       HomePage
       {loading ? (
@@ -62,15 +63,15 @@ const HomePage = () => {
       ) : (
         <CatsForm submit={submit} loading={loading} cats={cats} />
       )}
-      <Link to='/results'>Resultats</Link>
+      <Link to="/results">Résultats</Link>
     </div>
-  )
-}
+  );
+};
 
 HomePage.propTypes = {
   location: PropTypes.shape({
     pathname: PropTypes.string.isRequired
   }).isRequired
-}
+};
 
-export default HomePage
+export default HomePage;

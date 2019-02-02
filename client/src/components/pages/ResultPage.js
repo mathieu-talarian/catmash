@@ -1,22 +1,22 @@
-import React, { useState, useEffect } from 'react'
-import api from '../../api'
+import React, { useState, useEffect } from "react";
+import api from "../../api";
 
 const ResultPage = () => {
-  const [cats, updateCats] = useState([])
-  const [loading, updateLoading] = useState(false)
+  const [cats, updateCats] = useState([]);
+  const [loading, updateLoading] = useState(false);
 
   const onInitialRender = () => {
-    updateLoading(true)
+    updateLoading(true);
     api.cats
       .getAllOrdered()
       .then(res => {
-        updateLoading(false)
-        updateCats(res)
+        updateLoading(false);
+        updateCats(res);
       })
-      .catch(err => console.log(err))
-  }
+      .catch(err => console.log(err));
+  };
 
-  useEffect(onInitialRender, [])
+  useEffect(onInitialRender, []);
 
   const displayCats = () => (
     <tr>
@@ -28,14 +28,14 @@ const ResultPage = () => {
         </ul>
       ))}
     </tr>
-  )
+  );
 
   return (
     <div loading={loading}>
       ResultPage
       {displayCats()}
     </div>
-  )
-}
+  );
+};
 
-export default ResultPage
+export default ResultPage;
