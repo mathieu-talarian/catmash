@@ -19,11 +19,17 @@ func vote(r *gin.RouterGroup) {
 	vote.POST("", controllers.Vote)
 }
 
+func count(r *gin.RouterGroup) {
+	count := r.Group("/count")
+	count.GET("", controllers.Count)
+}
+
 func main() {
 	r := gin.Default()
 	v1 := r.Group("api/v1")
 	cats(v1)
 	vote(v1)
+	count(v1)
 	// results := v1.Group("/results")
 	if err := r.Run(); err != nil {
 		panic(err)

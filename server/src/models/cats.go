@@ -16,6 +16,7 @@ type Cats struct {
 	Image  string  `gorm:"type:varchar(500)" json:"image"`
 	UUID   string  `gorm:"type:varchar(500)" json:"uuid"`
 	Rating float64 `gorm:"notnull;type:decimal" json:"rating"`
+	Votes  uint64  `gorm:"notnull" json:"votes"`
 }
 
 type Image struct {

@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import api from "../../api";
 import CatsForm from "../forms/CatsForm";
+import CountPage from "./CountPage";
 
 const HomePage = () => {
   const [loading, updateLoading] = useState(true);
@@ -38,14 +39,10 @@ const HomePage = () => {
       .catch(() => toast.error("un probléme est survenu avec le serveur"));
   };
 
-  const submit = (res) => {
-    const { cat1, cat2 } = cats;
+  const submit = res => {
     updateLoading(true);
     api.vote
-      .post({
-        cat1: { id: cat1.id, voted: res === 1 },
-        cat2: { id: cat2.id, voted: res === 2 }
-      })
+      .post(res)
       .then(() => updateLoading(false))
       .catch(err => toast.error(err));
   };
@@ -55,12 +52,14 @@ const HomePage = () => {
   return (
     <div>
       <ToastContainer />
-      <image src={cats.cat1.image} />
       HomePage
       {loading ? (
         <></>
       ) : (
-        <CatsForm submit={submit} loading={loading} cats={cats} />
+        <>
+          <CatsForm submit={submit} loading={loading} cats={cats} />
+          <CountPage />
+        </>
       )}
       <Link to="/results">Résultats</Link>
     </div>
