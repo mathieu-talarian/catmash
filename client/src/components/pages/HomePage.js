@@ -38,9 +38,8 @@ const HomePage = () => {
       .catch(() => toast.error("un probléme est survenu avec le serveur"));
   };
 
-  const submit = (e, res) => {
+  const submit = (res) => {
     const { cat1, cat2 } = cats;
-    e.preventDefault();
     updateLoading(true);
     api.vote
       .post({
