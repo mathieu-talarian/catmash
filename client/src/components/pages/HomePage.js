@@ -35,7 +35,7 @@ const HomePage = () => {
         });
         updateLoading(false);
       })
-      .catch(err => toast.error(err));
+      .catch(() => toast.error("un probléme est survenu avec le serveur"));
   };
 
   const submit = (e, res) => {
