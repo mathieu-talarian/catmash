@@ -5,6 +5,7 @@
     "yarn": "1.x"
   },
   "scripts": {
-    "start": "cd client && yarn && yarn build && cp -rf build ../static"
+    "start": "cd client && yarn && yarn build && cp -rf build ../static",
+    "heroku-postbuild": "cd client && yarn && yarn build && cp -rf build ../static"
   }
 }
