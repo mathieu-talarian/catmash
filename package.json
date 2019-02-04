@@ -6,6 +6,6 @@
   },
   "scripts": {
     "start": "cd client && yarn && yarn build && cp -rf build ../static",
-    "heroku-postbuild": "cd client && yarn && yarn build && cp -rf build ../static"
+    "heroku-postbuild": "mkdir -p static && cd client && yarn && yarn build && cp -rf build ../static"
   }
 }
