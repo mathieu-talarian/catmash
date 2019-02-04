@@ -1,5 +1,10 @@
 {
+  "name": "catmash_front",
+  "version": "1.0.0",
+  "engines": {
+    "yarn": "1.x"
+  },
   "scripts": {
-    "run": "cd client && yarn && yarn build && cp -rf build ../static"
+    "start": "cd client && yarn && yarn build && cp -rf build ../static"
   }
 }

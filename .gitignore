@@ -5,3 +5,4 @@ server/.idea
 server/tmp
 server/main
 server/gin-bin
+static/build
