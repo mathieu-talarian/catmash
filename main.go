@@ -1,6 +1,7 @@
 package main
 
 import (
+	"github.com/gin-contrib/static"
 	"github.com/gin-gonic/gin"
 
 	"catmash/src/controllers"
@@ -31,6 +32,7 @@ func main() {
 	vote(v1)
 	count(v1)
 	// results := v1.Group("/results")
+	r.Use(static.Serve("/", static.LocalFile("./static/build", true)))
 	if err := r.Run(); err != nil {
 		panic(err)
 	}
