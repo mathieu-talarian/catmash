@@ -1,5 +1,37 @@
 import React, { useState, useEffect } from "react";
+import { Table, Avatar } from "antd";
+import { toast, ToastContainer } from "react-toastify";
 import api from "../../api";
+
+/*
+ interface cats = {
+  image 
+  rating 
+  nombre de votes
+}
+*/
+
+const columns = [
+  {
+    title: "Image",
+    key: "image",
+    dataIndex: "image",
+    render: text => {
+      return <Avatar shape="square" size={64} src={text} />;
+    },
+    align: "center"
+  },
+  {
+    title: "Nombre de votes",
+    dataIndex: "votes",
+    key: "votes"
+  },
+  {
+    title: "Rating",
+    dataIndex: "rating",
+    key: "rating"
+  }
+];
 
 const ResultPage = () => {
   const [cats, updateCats] = useState([]);
@@ -13,27 +45,22 @@ const ResultPage = () => {
         updateLoading(false);
         updateCats(res);
       })
-      .catch(err => console.log(err));
+      .catch(() => toast.error("un probleme est survenu avec le serveur"));
   };
 
   useEffect(onInitialRender, []);
 
-  const displayCats = () => (
-    <tr>
-      {cats.map(cat => (
-        <ul>
-          {cat.ID}
-          <br />
-          {cat.rating}
-        </ul>
-      ))}
-    </tr>
-  );
-
   return (
-    <div loading={loading}>
+    <div>
+      <ToastContainer />
       ResultPage
-      {displayCats()}
+      <Table
+        rowKey={record => record.ID}
+        key={record => record.ID}
+        loading={loading}
+        dataSource={cats}
+        columns={columns}
+      />
     </div>
   );
 };

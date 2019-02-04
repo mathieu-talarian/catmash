@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types";
-import { Link } from "react-router-dom";
+import { Spin } from "antd";
 import { ToastContainer, toast } from "react-toastify";
 import api from "../../api";
 import CatsForm from "../forms/CatsForm";
@@ -43,7 +43,7 @@ const HomePage = () => {
     updateLoading(true);
     api.vote
       .post(res)
-      .then(() => updateLoading(false))
+      .then(() => onInitialRender())
       .catch(err => toast.error(err));
   };
 
@@ -54,14 +54,11 @@ const HomePage = () => {
       <ToastContainer />
       HomePage
       {loading ? (
-        <></>
+        <Spin tip="Chargement..." />
       ) : (
-        <>
-          <CatsForm submit={submit} loading={loading} cats={cats} />
-          <CountPage />
-        </>
+        <CatsForm submit={submit} loading={loading} cats={cats} />
       )}
-      <Link to="/results">Résultats</Link>
+      <CountPage />
     </div>
   );
 };

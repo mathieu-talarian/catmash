@@ -6,8 +6,8 @@ import HomePage from "./components/pages/HomePage";
 import ResultPage from "./components/pages/ResultPage";
 import ErrorPage from "./components/pages/ErrorPage";
 
-import MyHeader from "./components/navigation/Header";
-import MyFooter from "./components/navigation/Footer";
+import MyHeader from "./components/navigation/MyHeader";
+import MyFooter from "./components/navigation/MyFooter";
 
 import api from "./api";
 
