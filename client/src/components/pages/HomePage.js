@@ -6,6 +6,8 @@ import api from "../../api";
 import CatsForm from "../forms/CatsForm";
 import CountPage from "./CountPage";
 
+import toastOptions from "../tools/toastOptions";
+
 const HomePage = () => {
   const [loading, updateLoading] = useState(true);
   const [disabled, updateDisabled] = useState(false);
@@ -66,7 +68,7 @@ const HomePage = () => {
   return (
     <Layout>
       <Layout.Content>
-        <ToastContainer />
+        <ToastContainer {...toastOptions} />
         <div className="homeTitle">
           <h1>Votez pour votre chat préféré !</h1>
         </div>

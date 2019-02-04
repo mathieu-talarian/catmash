@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Table, Avatar } from "antd";
 import { toast, ToastContainer } from "react-toastify";
 import api from "../../api";
+import toastOptions from "../tools/toastOptions";
 
 /*
  interface cats = {
@@ -52,7 +53,7 @@ const ResultPage = () => {
 
   return (
     <div>
-      <ToastContainer />
+      <ToastContainer {...toastOptions} />
       <Table
         rowKey={record => record.ID}
         key={record => record.ID}
