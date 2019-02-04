@@ -36,7 +36,7 @@ const CatsForm = ({ submit, loading, cats }) => {
     >
       <Row>
         <Col {...columnStyle}>
-          <Form.Item>
+          <Form.Item className="image_container">
             <input
               id="cat1"
               type="radio"
@@ -50,13 +50,13 @@ const CatsForm = ({ submit, loading, cats }) => {
               <img
                 src={cat1.image}
                 alt="cat1"
-                className={checked !== "1" && "unchecked"}
+                className={`image ${checked !== "1" && "unchecked"}`}
               />
             </label>
           </Form.Item>
         </Col>
         <Col {...columnStyle}>
-          <Form.Item>
+          <Form.Item className="image_container">
             <input
               id="cat2"
               type="radio"
@@ -70,7 +70,7 @@ const CatsForm = ({ submit, loading, cats }) => {
               <img
                 src={cat2.image}
                 alt="cat2"
-                className={checked !== "2" && "unchecked"}
+                className={`image ${checked !== "2" && "unchecked"}`}
               />
             </label>
           </Form.Item>
@@ -78,7 +78,6 @@ const CatsForm = ({ submit, loading, cats }) => {
       </Row>
       <div className="submitButton">
         <Button
-          block
           size="large"
           type="primary"
           htmlType="submit"

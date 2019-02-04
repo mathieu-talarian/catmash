@@ -1,3 +1,15 @@
+@font-face 
+  font-family: 'Brother 1816 Thin'
+  src: url('./assets/Brother-1816-Thin.eot')
+  src: url('./assets/Brother-1816-Thin.eot?#iefix') format('embedded-opentype'),
+  url('./assets/Brother-1816-Thin.woff') format('woff'),
+  url('./assets/Brother-1816-Thin.ttf') format('truetype')
+  font-weight: normal
+  font-style: normal
+
+body
+  font-family: 'Brother 1816 Thin'
+
 .cats-selector
   input
     margin: 0
@@ -29,7 +41,8 @@ input[type=radio]:checked + label>img
 
 .homeTitle
   text-align: center
-  padding: 2vh
+  padding: 5vh
+  font-size: 1.5em
 
 .submitButton
   text-align: center
@@ -47,3 +60,22 @@ input[type=radio]:checked + label>img
   text-align: right
   padding: 1vh
   margin: 1vh
+
+.image_container
+  position: relative
+  width: 500px
+  height: 500px
+  @media screen and(max-width: 1100px)
+    width: 200px
+    height: 200px
+  @media screen and(max-width: 410px)
+    width: 100px
+    height: 100px
+  overflow: hidden
+  z-index: 1
+  & img.image
+    height: 100%
+    width: 100%
+    position: relative
+    vertical-align: middle
+    border-style: none

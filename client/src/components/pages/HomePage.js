@@ -68,7 +68,7 @@ const HomePage = () => {
       <Layout.Content>
         <ToastContainer />
         <div className="homeTitle">
-          <h1>Votez pour votre chat préféré!</h1>
+          <h1>Votez pour votre chat préféré !</h1>
         </div>
         {loading ? (
           <Skeleton active>
@@ -82,15 +82,9 @@ const HomePage = () => {
           <CatsForm submit={submit} loading={loading} cats={cats} />
         )}
         <div className="changeButton">
-        <Button
-          block
-          size="large"
-          disabled={disabled}
-          ghost
-          onClick={changeImages}
-        >
-          Changer les images
-        </Button>
+          <Button size="large" disabled={disabled} ghost onClick={changeImages}>
+            Changer les images
+          </Button>
         </div>
         <CountPage newCount={vote} />
       </Layout.Content>
