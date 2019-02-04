@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
+import { PropTypes } from "prop-types";
 import api from "../../api";
 
-const CountPage = () => {
+const CountPage = ({ newCount }) => {
   const [count, updateCount] = useState(0);
 
   const onInitialRender = () => {
@@ -12,7 +13,16 @@ const CountPage = () => {
   };
 
   useEffect(onInitialRender, []);
-  return <div>Nombre de votes : {count}</div>;
+  useEffect(onInitialRender, [newCount]);
+  return (
+    <div className="counter">
+      {count} {count === 1 && count === 0 ? "vote" : "votes"}
+    </div>
+  );
+};
+
+CountPage.propTypes = {
+  newCount: PropTypes.number.isRequired
 };
 
 export default CountPage;

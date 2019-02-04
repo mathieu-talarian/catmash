@@ -29,7 +29,11 @@ const CatsForm = ({ submit, loading, cats }) => {
   };
 
   return (
-    <Form loading={loading} className="hiddenRadio" onSubmit={onSubmit}>
+    <Form
+      loading={loading.toString()}
+      className="hiddenRadio"
+      onSubmit={onSubmit}
+    >
       <Row>
         <Col {...columnStyle}>
           <Form.Item>
@@ -43,7 +47,11 @@ const CatsForm = ({ submit, loading, cats }) => {
               onChange={e => handleChange(e, e.target)}
             />
             <label htmlFor="cat1">
-              <img src={cat1.image} alt="cat1" />
+              <img
+                src={cat1.image}
+                alt="cat1"
+                className={checked !== "1" && "unchecked"}
+              />
             </label>
           </Form.Item>
         </Col>
@@ -59,14 +67,27 @@ const CatsForm = ({ submit, loading, cats }) => {
               onChange={e => handleChange(e, e.target)}
             />
             <label htmlFor="cat2">
-              <img src={cat2.image} alt="cat2" />
+              <img
+                src={cat2.image}
+                alt="cat2"
+                className={checked !== "2" && "unchecked"}
+              />
             </label>
           </Form.Item>
         </Col>
       </Row>
-      <Button type="primary" htmlType="submit" disabled={disabled}>
-        Soumettre le choix
-      </Button>
+      <div className="submitButton">
+        <Button
+          block
+          size="large"
+          type="primary"
+          htmlType="submit"
+          disabled={disabled}
+          loading={loading}
+        >
+          Soumettre votre choix
+        </Button>
+      </div>
     </Form>
   );
 };

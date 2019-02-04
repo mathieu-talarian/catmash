@@ -3,12 +3,12 @@ import PropTypes from "prop-types";
 import { Menu } from "antd";
 import { Link } from "react-router-dom";
 
-const Header = (/* { location } */) => (
+const Header = ({ location }) => (
   <Menu
     theme="dark"
     mode="horizontal"
-    defaultSelectedKeys={["2"]}
     style={{ lineHeight: "64px" }}
+    defaultSelectedKeys={location.pathname === "/" ? ["1"] : ["2"]}
   >
     <Menu.Item key="1">
       <Link to="/">Vote</Link>

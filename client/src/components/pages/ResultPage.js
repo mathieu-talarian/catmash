@@ -53,7 +53,6 @@ const ResultPage = () => {
   return (
     <div>
       <ToastContainer />
-      ResultPage
       <Table
         rowKey={record => record.ID}
         key={record => record.ID}

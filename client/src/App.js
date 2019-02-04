@@ -28,7 +28,7 @@ const App = ({ location }) => (
         <Route path="*" component={ErrorPage} />
       </Switch>
     </Content>
-    <Footer>
+    <Footer className="footer">
       <MyFooter />
     </Footer>
   </Layout>

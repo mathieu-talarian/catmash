@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types";
-import { Spin } from "antd";
+import { Button, Layout, Spin, Skeleton, Row, Col } from "antd";
 import { ToastContainer, toast } from "react-toastify";
 import api from "../../api";
 import CatsForm from "../forms/CatsForm";
@@ -8,6 +8,8 @@ import CountPage from "./CountPage";
 
 const HomePage = () => {
   const [loading, updateLoading] = useState(true);
+  const [disabled, updateDisabled] = useState(false);
+  const [vote, updateVote] = useState(0);
   const [cats, updateCats] = useState({
     cat1: {
       id: 0,
@@ -43,23 +45,56 @@ const HomePage = () => {
     updateLoading(true);
     api.vote
       .post(res)
-      .then(() => onInitialRender())
+      .then(() => {
+        toast.success("Votre vote a été pris en compte");
+        updateVote(vote + 1);
+        onInitialRender();
+      })
       .catch(err => toast.error(err));
+  };
+
+  const changeImages = () => {
+    updateDisabled(true);
+    onInitialRender();
+    setTimeout(() => {
+      updateDisabled(false);
+    }, 20000);
   };
 
   useEffect(onInitialRender, []);
 
   return (
-    <div>
-      <ToastContainer />
-      HomePage
-      {loading ? (
-        <Spin tip="Chargement..." />
-      ) : (
-        <CatsForm submit={submit} loading={loading} cats={cats} />
-      )}
-      <CountPage />
-    </div>
+    <Layout>
+      <Layout.Content>
+        <ToastContainer />
+        <div className="homeTitle">
+          <h1>Votez pour votre chat préféré!</h1>
+        </div>
+        {loading ? (
+          <Skeleton active>
+            <Spin tip="Chargement..." />
+            <Row>
+              <Col />
+              <Col />
+            </Row>
+          </Skeleton>
+        ) : (
+          <CatsForm submit={submit} loading={loading} cats={cats} />
+        )}
+        <div className="changeButton">
+        <Button
+          block
+          size="large"
+          disabled={disabled}
+          ghost
+          onClick={changeImages}
+        >
+          Changer les images
+        </Button>
+        </div>
+        <CountPage newCount={vote} />
+      </Layout.Content>
+    </Layout>
   );
 };
 
