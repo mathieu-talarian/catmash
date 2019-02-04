@@ -1,6 +1,0 @@
-build:
-  languages:
-    - go
-    - nodejs
-  pre:
-    - ./build.sh
