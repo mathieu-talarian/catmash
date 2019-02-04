@@ -1,5 +1,5 @@
 {
   "scripts": {
-    "build": "cd client && yarn && yarn build && cp -rf build ../static"
+    "run": "cd client && yarn && yarn build && cp -rf build ../static"
   }
 }
