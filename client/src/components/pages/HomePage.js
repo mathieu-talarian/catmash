@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import PropTypes from "prop-types";
 import { Button, Layout, Spin, Skeleton, Row, Col } from "antd";
 import { ToastContainer, toast } from "react-toastify";
 import api from "../../api";
@@ -92,12 +91,6 @@ const HomePage = () => {
       </Layout.Content>
     </Layout>
   );
-};
-
-HomePage.propTypes = {
-  location: PropTypes.shape({
-    pathname: PropTypes.string.isRequired
-  }).isRequired
 };
 
 export default HomePage;

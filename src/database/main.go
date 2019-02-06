@@ -1,6 +1,9 @@
 package database
 
 import (
+	"fmt"
+	"os"
+
 	"github.com/jinzhu/gorm"
 
 	// psql dialect for gorm
@@ -13,6 +16,8 @@ var dbURL = "postgres://wgymvabygmqkwq:b099cbe98be58be74e29d098fdbdccbdd36d23beb
 
 func init() {
 	var err error
+
+	fmt.Println(os.Getenv("DATABASE_URL"))
 
 	if Db, err = gorm.Open("postgres", dbURL); err != nil {
 		panic(err)

@@ -33,6 +33,9 @@ func main() {
 	count(v1)
 	// results := v1.Group("/results")
 	r.Use(static.Serve("/", static.LocalFile("./static/build", true)))
+	r.NoRoute(func(c *gin.Context) {
+		c.File("./static/build/index.html")
+	})
 	if err := r.Run(); err != nil {
 		panic(err)
 	}
