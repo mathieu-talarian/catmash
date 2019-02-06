@@ -12,7 +12,7 @@ import (
 
 var Db *gorm.DB
 
-var dbURL = "postgres://wgymvabygmqkwq:b099cbe98be58be74e29d098fdbdccbdd36d23beba9283dec2d96b10d0f46f8a@ec2-54-228-212-134.eu-west-1.compute.amazonaws.com:5432/do6oectkou78l"
+var dbURL = os.Getenv("DATABASE_URL")
 
 func init() {
 	var err error
